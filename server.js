@@ -25,11 +25,12 @@ app.use(express.urlencoded({extended: true}))
       res.json(data);
   });
 
-  app.get('/api/ProductsRandom', async (req, res) => { {}
+  app.get('/api/Products/random', async (req, res) => { {}
     try{
         const data = await contenedor.getAllPromise()
 
         const numero = Math.floor(Math.random() * data.length)
+        
         const item = data[numero]
 
         res.json(item)
